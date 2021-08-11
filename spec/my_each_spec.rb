@@ -13,9 +13,7 @@ RSpec.describe Enumerable do
         my_each_results << element
       end
 
-      my_each_results.zip(enumerable.each) do |my_each_value, expected_value|
-        expect(my_each_value).to be expected_value
-      end
+      expect(my_each_results).to eq (enumerable.each.to_a)
     end
   end
 end
