@@ -3,7 +3,7 @@
 require_relative '../lib/my_enumerables'
 
 RSpec.describe Enumerable do
-  let(:enumerable) { [1, 1, 2, 3, 5, 8, 13, 21, 34] }
+  subject(:enumerable) { [1, 1, 2, 3, 5, 8, 13, 21, 34] }
 
   describe '#my_map' do
     it 'returns an array with the results of running the given block for every element' do

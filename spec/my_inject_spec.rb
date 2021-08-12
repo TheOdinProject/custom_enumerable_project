@@ -3,7 +3,7 @@
 require_relative '../lib/my_enumerables'
 
 RSpec.describe Enumerable do
-  let(:enumerable) { [1, 1, 2, 3, 5, 8, 13, 21, 34] }
+  subject(:enumerable) { [1, 1, 2, 3, 5, 8, 13, 21, 34] }
 
   describe '#my_inject' do
     it 'reduces an enumerable to a single value' do
