@@ -13,5 +13,11 @@ RSpec.describe Enumerable do
     it 'filters values that do not match the condition' do
       expect(enumerable.my_select { |value| value > 10 }).not_to include(1, 2, 3, 5, 8)
     end
+
+    context 'when no items match the condition' do
+      it 'returns an empty array' do
+        expect(enumerable.my_select { |value| value > 40 }).to eq([])
+      end
+    end
   end
 end
