@@ -8,15 +8,15 @@ RSpec.describe Enumerable do
   describe '#my_count' do
     context 'when not given a block' do
       it 'returns the size of the enumerable' do
-        expect(enumerable.count).to eq enumerable.size
+        expect(enumerable.my_count).to eq enumerable.size
       end
     end
 
     context 'when given a block' do
       it 'returns the count of the elements that satisfy the condition' do
-        expect(enumerable.count { |value| value > 5 }).to eq 4
-        expect(enumerable.count { |value| value <= 5 }).to eq 5
-        expect(enumerable.count { |value| value == 5 }).to eq 1
+        expect(enumerable.my_count { |value| value > 5 }).to eq 4
+        expect(enumerable.my_count { |value| value <= 5 }).to eq 5
+        expect(enumerable.my_count { |value| value == 5 }).to eq 1
       end
     end
   end
