@@ -18,7 +18,7 @@ RSpec.describe Enumerable do
       expect(product).to eq 2_227_680
     end
 
-    it 'uses the inital value on the first iteration' do
+    it 'uses the initial value on the first iteration' do
       initial_value = 100
 
       # calculates the sum of the elements of the enumerable array plus the initial value
