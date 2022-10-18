@@ -3,6 +3,14 @@ require 'byebug'
 module Enumerable
   # Your code goes here
 
+  def my_any?
+    result = false
+
+    my_each { |item| result ||= yield(item) }
+
+    result
+  end
+
   def my_all?
     result = true
 
