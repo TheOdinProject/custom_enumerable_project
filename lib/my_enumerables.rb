@@ -3,6 +3,14 @@ require 'byebug'
 module Enumerable
   # Your code goes here
 
+  def my_map
+    result = []
+
+    my_each { |item| result << yield(item) }
+
+    result
+  end
+
   def my_count
     return size unless block_given?
 
