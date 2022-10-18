@@ -3,6 +3,16 @@ require 'byebug'
 module Enumerable
   # Your code goes here
 
+  def my_all?
+    result = true
+
+    my_each do |item|
+      result &&= yield(item)
+    end
+
+    result
+  end
+
   def my_select
     result = []
 
