@@ -6,9 +6,7 @@ module Enumerable
   def my_all?
     result = true
 
-    my_each do |item|
-      result &&= yield(item)
-    end
+    my_each { |item| result &&= yield(item) }
 
     result
   end
@@ -16,9 +14,7 @@ module Enumerable
   def my_select
     result = []
 
-    my_each do |item|
-      result << item if yield(item)
-    end
+    my_each { |item| result << item if yield(item) }
 
     result
   end
