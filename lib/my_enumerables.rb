@@ -1,5 +1,17 @@
+require 'byebug'
+
 module Enumerable
   # Your code goes here
+
+  def my_select
+    result = []
+
+    my_each do |item|
+      result << item if yield(item)
+    end
+
+    result
+  end
 
   def my_each_with_index
     i = 0
