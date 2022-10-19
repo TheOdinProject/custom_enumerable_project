@@ -1,7 +1,13 @@
-require 'byebug'
-
 module Enumerable
   # Your code goes here
+
+  def my_inject(initial_value = 0)
+    sum = initial_value
+
+    my_each { |num| sum = yield(sum, num) }
+
+    sum
+  end
 
   def my_map
     result = []
