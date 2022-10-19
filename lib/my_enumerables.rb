@@ -1,6 +1,4 @@
 module Enumerable
-  # Your code goes here
-
   def my_inject(initial_value = 0)
     sum = initial_value
 
@@ -75,7 +73,6 @@ end
 # your enumerable module will have access
 # to this method
 class Array
-  # Define my_each here
   def my_each
     for element in self
       yield(element)
