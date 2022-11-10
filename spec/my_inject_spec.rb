@@ -8,7 +8,7 @@ RSpec.describe Enumerable do
   describe '#my_inject' do
     context 'when it receives a symbol' do
       it 'combines the operands using the method' do
-        expect(enumerable.my_inject(:-)).to eq -86
+        expect(enumerable.my_inject(:-)).to eq(-86)
       end
     end
 
@@ -28,13 +28,13 @@ RSpec.describe Enumerable do
       it 'sums the elements of the enumerable array' do
         expect(enumerable.my_inject(0) { |sum, value| sum + value }).to eq 88
       end
-  
+
       it 'multiplies the elements of the enumerable array' do
         product = enumerable.my_inject(1) { |prod, value| prod * value }
-  
+
         expect(product).to eq 2_227_680
       end
-  
+
       it 'uses the initial value on the first iteration' do
         # calculates the sum of the elements of the enumerable array plus the initial value
         expect(enumerable.my_inject(100) { |sum, value| sum + value }).to eq 188
