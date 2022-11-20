@@ -64,7 +64,7 @@ again to see if your code is correct or not.
 
 ### Methods
 
-The following table has the methods you will need to implement along with their associated specs, as outlined in the project instructions. The methods in the Enumerable module do not need to work with non-Arrays, but you can challenge yourself and try to make them work for Hashes as well.
+The following table has the methods you will need to implement along with their associated specs, as outlined in the project instructions. The methods in the Enumerable module only need to work with Arrays, but you can challenge yourself and try to make them work for Hashes as well.
 
 | Method                          | Spec File                       | Notes                                                                 |
 | ------------------------------- | ------------------------------- | --------------------------------------------------------------------- |
