@@ -1,11 +1,26 @@
 module Enumerable
-  # Your code goes here
+
+  def my_all?
+    self.each do |input|
+      return false unless yield(input)
+    end
+    true
+  end
+
+  def my_any?
+    self.each do |input|
+      return true if yield(input)
+    end
+    false
+  end
 end
 
-# You will first have to define my_each
-# on the Array class. Methods defined in
-# your enumerable module will have access
-# to this method
 class Array
-  # Define my_each here
+
+  def my_each
+    for input in self
+      yield(input)
+    end
+    self
+  end
 end
