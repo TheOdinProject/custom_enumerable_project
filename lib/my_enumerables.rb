@@ -79,8 +79,17 @@ module Enumerable
      true
   end
 
-  def my_select(&block)
-    self.select(&block)
+  def my_select
+
+    matching_values = []
+
+    my_each do |elem|
+
+      if yield(elem)
+        matching_values << elem
+      end
+    end
+    matching_values
   end
 end
 
