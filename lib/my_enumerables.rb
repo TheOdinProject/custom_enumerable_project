@@ -36,7 +36,9 @@ module Enumerable
   def my_each_with_index
 
     if block_given?
-      self.each_with_index do |elem, index|
+      index = -1
+      self.my_each do |elem|
+        index += 1
         yield(elem, index)
       end
     end
