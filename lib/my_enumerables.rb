@@ -45,7 +45,7 @@ module Enumerable
     self
   end
 
-  def my_inject(initial_value = nil, &block)
+  def my_inject(initial_value = nil)
 
     accumulator = initial_value
     
@@ -57,6 +57,7 @@ module Enumerable
   end
 
   def my_map
+    
     if block_given?
 
       new_array = []
@@ -68,8 +69,14 @@ module Enumerable
     end
   end
 
-  def my_none?(&block)
-    self.none?(&block)
+  def my_none?
+    
+    self.my_each do |elem|
+      if yield(elem)
+        return false
+      end
+    end
+     true
   end
 
   def my_select(&block)
