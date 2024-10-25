@@ -34,6 +34,7 @@ module Enumerable
   end
 
   def my_each_with_index
+
     if block_given?
       self.each_with_index do |elem, index|
         yield(elem, index)
@@ -65,10 +66,10 @@ class Array
 
   def my_each
     if block_given?
-      self.each do |elem|
-        yield(elem)
-      end
-      self
+     for i in 0...size
+        yield(self[i])
+     end
+     self
     end
   end
 end
