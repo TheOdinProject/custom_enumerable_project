@@ -17,15 +17,20 @@ module Enumerable
         return true
       end
     end
-    false
+     false
   end
 
-  def my_count(&block)
+  def my_count
+
     if block_given?
-      count(&block)
-    else
-      self.count
+      count = 0
+
+      my_each do |elem|
+        count += 1 if yield(elem)
+      end
+      return count
     end
+    size
   end
 
   def my_each_with_index
