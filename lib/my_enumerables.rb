@@ -10,8 +10,14 @@ module Enumerable
     true
   end
 
-  def my_any?(&block)
-    self.any?(&block)
+  def my_any?
+    
+    self.my_each do |elem|
+      if yield(elem)
+        return true
+      end
+    end
+    false
   end
 
   def my_count(&block)
