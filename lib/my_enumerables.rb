@@ -1,7 +1,13 @@
 module Enumerable
 
-  def my_all?(&block)
-    self.all?(&block)
+  def my_all?
+
+    self.each do |elem|
+      unless yield(elem)
+        return false
+      end
+    end
+    true
   end
 
   def my_any?(&block)
