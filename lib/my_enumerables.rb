@@ -45,8 +45,15 @@ module Enumerable
     self
   end
 
-  def my_inject(initial = 100, &block)
-    self.inject(initial, &block)
+  def my_inject(initial_value = nil, &block)
+
+    accumulator = initial_value
+    
+    my_each_with_index do |elem, index|
+      product = yield(accumulator, elem)
+      accumulator = product
+    end
+    accumulator
   end
 
   def my_map(&block)
