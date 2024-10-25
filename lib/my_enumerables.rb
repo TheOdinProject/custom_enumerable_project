@@ -2,7 +2,7 @@ module Enumerable
 
   def my_all?
 
-    self.each do |elem|
+    self.my_each do |elem|
       unless yield(elem)
         return false
       end
