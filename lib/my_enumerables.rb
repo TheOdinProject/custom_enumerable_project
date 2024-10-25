@@ -56,9 +56,15 @@ module Enumerable
     accumulator
   end
 
-  def my_map(&block)
+  def my_map
     if block_given?
-      map(&block)
+
+      new_array = []
+
+      my_each do |elem|
+        new_array << yield(elem)
+      end
+      new_array
     end
   end
 
